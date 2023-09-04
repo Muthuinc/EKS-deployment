@@ -6,7 +6,7 @@ metadata:
     app: hills
 spec:
   replicas: 2
-  selectors:
+  selector:
     matchLabels:
       app: hills
   template:

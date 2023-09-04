@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mywebapp
+  name: my-webapp
 spec:
   selector:
     app: hills
@@ -9,4 +9,4 @@ spec:
     - protocol:
       port: 80
       targetPort: 80
-  type: loadBalancer
+  type: LoadBalancer

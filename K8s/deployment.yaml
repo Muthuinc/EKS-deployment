@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: mywebapp
+  labels:
+    app: hills
+spec:
+  replicas: 2
+  selectors:
+    matchLabels:
+      app: hills
+  template:
+    metadata:
+      labels:
+        app: hills
+    spec:
+      containers:
+        - name: my-container
+          image: muthuinc/webapp:latest
+          ports:
+            - containerPort: 80
+

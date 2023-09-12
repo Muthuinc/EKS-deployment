@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}		# This value is obtained from the helm command 'helm install myapp(this is the release name) myapp 
+spec: 
+  replicas: {{ .Values.replicaCount }}  # These values can be found in values.yaml file
+  selector:
+    matchLabels:
+      app: knote
+  template:
+    metadata:
+      labels:
+        app: knote
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image1.name }}
+          ports:
+            - containerPort: {{ .Values.image1.port }}
+          
+

@@ -1,0 +1,7 @@
+replicaCount: 2
+
+image1:
+  name: muthuinc/webapp
+  port: 80
+
+

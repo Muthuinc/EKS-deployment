@@ -34,8 +34,40 @@ Before you begin you must have these,
 ```
 kubectl get svc
 ```
+
 The above cli command reteives the loadbalancer's DNS address. view the application:clap:
+
+Note: Here the application is deployed in the default namespace. I can also be done in a custom namespace.
 
 
 At the end we clean up the image from the local machine as apost build action.
 
+
+### Helm installation candidate added additionally
+
+**Jenkinsfilehelm** is configured with the helm commands in the deployment stage. Helm is a installation tool for K8 like apt for ubuntu which makes the k8 deployment and rollback at our will easily. It does not required to create deployment, service, secrets etc.. seperately for each environments or each version. 
+
+```
+helm create myapp
+```
+This command creates a folder _myapp_ with the default files required for helm. we can customise it as per our own requirements. 
+  - Chart.yaml
+  - values.yaml  Here we just edit the configurations like image name, ports, replicas, strategy type etc..
+  - templates 
+
+```
+helm install myapp myapp
+```
+It does the deployment.
+
+```
+helm upgrade myapp1 myapp
+```
+It does the upgrade
+
+```
+helm rollback myapp
+```
+We can get back any previous version of our applications.
+
+This is just the basic level of k8 deployments, After understand the concept explore the other things.

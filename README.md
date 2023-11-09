@@ -2,7 +2,7 @@
 
 ### Overview
 
-This project automates the deployment of sample web application **Myweb-app** to the AWS EKS cluster> It also demonstrates the build and push steps in docker and deployment in K8 cluster hoster on AWS.
+This project automates the deployment of sample web application **Myweb-app** to the AWS EKS cluster> It also demonstrates the build and push steps in docker and deployment in K8 cluster hosted on AWS.
 
 ### Pre-requisities
 
